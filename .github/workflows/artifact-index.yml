@@ -1,0 +1,16 @@
+name: artifact-index
+
+on:
+  push:
+    branches: [ main, master ]
+  workflow_dispatch:
+
+jobs:
+  index:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Count artifacts
+        run: |
+          count=$(find artifacts -maxdepth 1 -type f | wc -l | tr -d ' ')
+          echo "artifact_count=$count"

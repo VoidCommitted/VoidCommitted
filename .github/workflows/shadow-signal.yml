@@ -1,0 +1,16 @@
+name: shadow-signal
+
+on:
+  push:
+    branches: [ main, master ]
+  workflow_dispatch:
+
+jobs:
+  signal:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Emit shadow signal
+        run: |
+          echo "signal=online"
+          echo "noise=suppressed"
+          echo "archive=stable"

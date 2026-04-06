@@ -1,0 +1,26 @@
+name: archive-integrity
+
+on:
+  push:
+    branches: [ main, master ]
+  workflow_dispatch:
+
+jobs:
+  integrity:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify archive structure
+        run: |
+          test -f README.md
+          test -f artifacts/VoidMonolith.stl
+          test -f artifacts/VoidMonolith.md
+          test -f artifacts/index.md
+          test -f archive/fragment-001.md
+          test -f archive/fragment-002.md
+          test -f archive/fragment-003.md
+          test -f transmissions/channel-01.md
+          test -f transmissions/carrier.log
+          test -f transmissions/relay-state.txt
+          test -f faq.txt
+          echo "archive_integrity=ok"

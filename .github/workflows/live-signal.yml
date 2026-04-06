@@ -1,0 +1,11 @@
+name: live-signal
+
+on:
+  workflow_dispatch:
+
+jobs:
+  disabled:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Manual mode
+        run: echo "disabled in V5.1"
