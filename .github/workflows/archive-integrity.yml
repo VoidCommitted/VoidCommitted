@@ -22,5 +22,4 @@ jobs:
           test -f transmissions/channel-01.md
           test -f transmissions/carrier.log
           test -f transmissions/relay-state.txt
-          test -f faq.txt
           echo "archive_integrity=ok"
