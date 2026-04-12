@@ -39,8 +39,8 @@ STATE    :: COMMITTED
 ├── artifacts
 ├── archive
 ├── transmissions
-├── dead_drop
-└── satellite_template
+├── sealed_cycle
+└── dead_drop
 ```
 
 ---
@@ -70,8 +70,7 @@ STATE    :: COMMITTED
 ```
 
 ```ini
-artifact_class = void_monolith_v5_1
-geometry       = double plinth + tapered obelisk
+artifact_class = void_monolith
 role           = primary relay / memory vault / dead node marker
 status         = archived object / visual emblem
 payload        = ./artifacts/VoidMonolith.stl
@@ -86,33 +85,6 @@ signal_lock    = active
 - [`OPEN RELAY OBJECT FILE :: VoidMonolith.stl`](./artifacts/VoidMonolith.stl)
 - [`OPEN ARTIFACT DOSSIER :: VoidMonolith.md`](./artifacts/VoidMonolith.md)
 - [`OPEN MANIFEST :: manifest.ini`](./artifacts/manifest.ini)
-
-<details>
-<summary><code>open relay dossier</code></summary>
-
-```text
-height_class   :: monolithic
-surface_mode   :: file_viewer_primary
-readme_mode    :: symbolic_proxy
-temperament    :: sealed
-state          :: stable
-```
-
-```bash
-ls ./artifacts
-# VoidMonolith.stl
-# VoidMonolith.md
-# manifest.ini
-# index.md
-```
-
-```text
-design_logic :: README stays light / STL stays real
-viewer_rule  :: GitHub file viewer shows the 3D object better than inline README STL
-v5_1_choice  :: symbol in README / artifact in file / no unstable gimmicks
-```
-
-</details>
 
 ---
 
@@ -211,9 +183,7 @@ memory offset :: 0x00000004 :: "I work between those two deaths"
 name      = VoidMonolith.stl
 type      = relay_object
 state     = archived
-version   = 5.1
 surface   = public
-viewer    = github_file_viewer
 path      = ./artifacts/VoidMonolith.stl
 
 [artifact.01]
@@ -294,6 +264,29 @@ tail ./transmissions/carrier.log
 
 ---
 
+## `SEALED CYCLE // CHAPTERS`
+
+```text
+cycle_state :: initiated
+chapter_i   :: surfaced
+remaining   :: sealed
+```
+
+- [`NULL SHRINE // chapter i`](https://github.com/VoidCommitted/null-shrine)
+
+```text
+[02] BLACK RELAY        :: sealed
+[03] MOUTH OF STATIC    :: sealed
+[04] ATLAS OF ABSENCES  :: sealed
+[05] PRESSURE VESSEL    :: sealed
+[06] OWNERLESS CORE     :: sealed
+```
+
+> The first chamber is now public.  
+> The rest will surface under seal.
+
+---
+
 ## `DEAD DROP // FUEL`
 
 ```text
@@ -312,38 +305,6 @@ network       = solana
 target        = VoidCommitted
 purpose       = fuel for abandoned infrastructure
 drop_manifest = ./drops/fuel.md
-```
-
----
-
-## `SATELLITE TEMPLATE // FIELD STANDARD`
-
-```text
-future nodes should share a common header
-light repo / same language / same cold surface
-```
-
-- [`README.template.md`](./satellite-template/README.template.md)
-- [`manifest.template.ini`](./satellite-template/manifest.template.ini)
-
----
-
-## `TOPOLOGY // BLACK MAP`
-
-```mermaid
-flowchart TD
-    A[VOIDCOMMITTED] --> B[MISSION LOG]
-    A --> C[VOID MONOLITH]
-    A --> D[RELAY LAW]
-    A --> E[PROTOCOLS]
-    A --> F[TELEMETRY]
-    A --> G[ARTIFACTS]
-    A --> H[ARCHIVE]
-    A --> I[TRANSMISSIONS]
-    A --> J[DEAD DROP]
-    A --> K[SATELLITE TEMPLATE]
-    G --> L[ARTIFACT LEDGER]
-    H --> M[SEALED FRAGMENTS]
 ```
 
 ---
